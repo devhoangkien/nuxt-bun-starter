@@ -8,9 +8,8 @@ export default defineNuxtConfig({
   devServer: {
     port: Number(process.env.PORT)
   },
+  plugins:['~/plugins/antd'],
   modules: [
-    '@nuxtjs/tailwindcss',
-    'nuxt-headlessui',
     'nuxt-icon',
     '@nuxtjs/color-mode',
     // management
@@ -18,7 +17,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     // contents,
     '@nuxt/content',
+    // '@ant-design-vue/nuxt'
   ],
+  // antd:{
+  //   // Options
+  // },
   css: [
     resolve('./assets/scss/_variables.scss'),
     resolve('./assets/scss/app.scss'),
@@ -28,11 +31,6 @@ export default defineNuxtConfig({
     {
       prefix: 'Layout',
       path: resolve('./components/layouts'),
-      global: true,
-    },
-    {
-      prefix: 'Austin',
-      path: resolve('./components/austin'),
       global: true,
     },
   ],
@@ -47,9 +45,9 @@ export default defineNuxtConfig({
   },
 
    // module::headlessui
-   headlessui: {
-    prefix: 'Headless',
-  },
+  //  headlessui: {
+  //   prefix: 'Headless',
+  // },
 
   // module::color-mode
   colorMode: {
@@ -66,4 +64,6 @@ export default defineNuxtConfig({
       theme: 'github-dark',
     },
   },
+
+ 
 })

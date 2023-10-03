@@ -10,6 +10,10 @@ dev
 # Node dependencies
 node_modules
 
+# lock
+package-lock.json
+yarn.lock
+
 # Logs
 logs
 *.log
@@ -20,6 +24,6 @@ logs
 .idea
 
 # Local env files
-.env
-.env.*
-!.env.example
+# .env
+# .env.*
+# !.env.example
