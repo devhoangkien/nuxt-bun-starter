@@ -1,16 +1,25 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-
-  <Body
-    class="antialiased duration-300 transition-colors text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-950"
-  >
-    <NuxtLayout>
-      <NuxtLoadingIndicator />
-      <NuxtPage />
+ 
+    <NuxtLayout >
+      <div v-show="show">
+        Loading...
+    </div>
+      <div v-show="!show">
+        <NuxtPage/>
+      </div>
     </NuxtLayout>
-  </Body>
 </template>
+
+<script setup>
+  const nuxtApp = useNuxtApp();
+  const show = ref(true);
+
+  addRouteMiddleware('global-loader', () => {
+      show.value = true
+  }, {
+      global: true
+  })
+
+  nuxtApp.hook('page:finish', () => { show.value = false; })
+</script>
 

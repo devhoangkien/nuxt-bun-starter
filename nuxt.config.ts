@@ -1,14 +1,12 @@
 import { createResolver } from '@nuxt/kit'
 const { resolve } = createResolver(import.meta.url)
 
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   devServer: {
     port: Number(process.env.PORT)
   },
-  plugins:['~/plugins/antd'],
   modules: [
     'nuxt-icon',
     '@nuxtjs/color-mode',
@@ -17,16 +15,16 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     // contents,
     '@nuxt/content',
-    // '@ant-design-vue/nuxt'
+    '@ant-design-vue/nuxt'
   ],
-  // antd:{
-  //   // Options
-  // },
+  antd:{
+    // Options
+  },
   css: [
     resolve('./assets/scss/_variables.scss'),
     resolve('./assets/scss/app.scss'),
   ],
-
+ 
   components: [
     {
       prefix: 'Layout',
@@ -50,9 +48,9 @@ export default defineNuxtConfig({
   // },
 
   // module::color-mode
-  colorMode: {
-    classSuffix: '',
-  },
+  // colorMode: {
+  //   classSuffix: '',
+  // },
 
   // module::content
   content: {

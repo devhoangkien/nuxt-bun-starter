@@ -13,7 +13,6 @@ const createOptions = (storage: Storage, options: Options = {}): Options => {
     ...options,
   };
 };
-
 export const WebStorage = create(createOptions(sessionStorage));
 
 export const createStorage = (storage: Storage = sessionStorage, options: Options = {}) => {
